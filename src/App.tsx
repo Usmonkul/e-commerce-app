@@ -1,9 +1,12 @@
-import "./App.css";
-
+import { Outlet } from "react-router-dom";
+import Navigation from "./routes/navigation/navigation";
+import Footer from "./routes/footer/footer";
 const App = () => {
   return (
     <div className="App">
-      <h1>I am Usmon</h1>
+      <Navigation />
+      <Outlet />
+      <Footer />
     </div>
   );
 };
