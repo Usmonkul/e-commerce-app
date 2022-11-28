@@ -36,8 +36,13 @@ const Best = () => {
         </Paragraph>
       </div>
       <List>
-        {ItemsData.map((card) => (
-          <BestItems title={card.title} info={card.info} imgUrl={card.imgUrl} />
+        {ItemsData.map((card, index) => (
+          <BestItems
+            title={card.title}
+            info={card.info}
+            imgUrl={card.imgUrl}
+            key={index}
+          />
         ))}
       </List>
     </BestContainer>
