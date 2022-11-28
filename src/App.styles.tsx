@@ -20,3 +20,13 @@ export const Paragraph = styled.p`
   line-height: 17px;
   text-align: center;
 `;
+
+export const SecodaryHeading = styled.h2`
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 700px;
+  color: #000000;
+  margin: 0;
+  margin-bottom: 20px;
+`;
