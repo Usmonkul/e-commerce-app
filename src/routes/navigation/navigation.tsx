@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/Logo.svg";
 import Cart from "../../features/cart/cart";
 import Search from "../../features/search/search";
+import React from "react";
 const Navigation = () => {
   return (
     <>
