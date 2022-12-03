@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/Logo.svg";
 import Cart from "../../features/cart/cart";
 import Search from "../../features/search/search";
-import React from "react";
+import CartDropDown from "../../components/cart-dropdown/cart-dropdown";
+import React, { useContext } from "react";
+import { CartContext } from "../../context/cart.context";
 const Navigation = () => {
+  const { isCartOpen } = useContext(CartContext);
   return (
     <>
       <NavigationContainer>
@@ -17,6 +20,7 @@ const Navigation = () => {
           <NavLink to={"/about"}>About</NavLink>
           <NavLink to={"/support"}>Support</NavLink>
         </NavLinks>
+        {isCartOpen && <CartDropDown />}
         <SearchCartContainer>
           <Search />
           <Cart />
@@ -38,6 +42,7 @@ export const NavigationContainer = styled.div`
   justify-content: space-between;
   margin-bottom: 30px;
   padding: 20px 40px;
+  position: relative;
 `;
 
 export const LogoContainer = styled(Link)`

@@ -6,8 +6,9 @@ export type ProductTypes = {
   name: string;
   price: string;
   memory?: string;
-  image: string;
+  imageUrl: string;
   ram?: string;
+  id: string;
 };
 const ProductList = () => {
   return (
@@ -15,19 +16,19 @@ const ProductList = () => {
       <SecodaryHeading>Smart Phones</SecodaryHeading>
       <ProductListWrapper>
         {data.phone.map((item: ProductTypes) => {
-          return <ProductCard product={item} key={item.name} />;
+          return <ProductCard product={item} key={item.id} />;
         })}
       </ProductListWrapper>
       <SecodaryHeading>Laptops</SecodaryHeading>
       <ProductListWrapper>
         {data.laptop.map((item: ProductTypes) => {
-          return <ProductCard product={item} key={item.name} />;
+          return <ProductCard product={item} key={item.id} />;
         })}
       </ProductListWrapper>
       <SecodaryHeading>Smart Watch</SecodaryHeading>
       <ProductListWrapper>
         {data.watch.map((item: ProductTypes) => {
-          return <ProductCard product={item} key={item.name} />;
+          return <ProductCard product={item} key={item.id} />;
         })}
       </ProductListWrapper>
     </ProdactContainer>

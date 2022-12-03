@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CartContext } from "../../context/cart.context";
 import styled from "styled-components";
 import { ProductTypes } from "../productsList/product-list";
 import { ReactComponent as CartImage } from "../../assets/cart.svg";
@@ -8,15 +9,18 @@ type ProductCart = {
 };
 
 const ProductCard = ({ product }: ProductCart): React.ReactElement => {
-  const { name, price, image, ram, memory } = product;
+  const { name, price, imageUrl, ram, memory } = product;
+  const { addItemToCart } = useContext(CartContext);
+
+  const addProductToCart = () => addItemToCart(product);
   return (
     <ProductCardContainer>
-      <img width={200} src={image} alt={`${name}`} />
+      <img width={200} src={imageUrl} alt={`${name}`} />
       <div className="footer">
         <span className="name">{name}</span>
         <div className="footer-group">
           <span className="price">${price}</span>
-          <span className="cart">
+          <span className="cart" onClick={addProductToCart}>
             <CartImage />
           </span>
         </div>
@@ -91,6 +95,7 @@ const ProductCardContainer = styled.div`
       line-height: 22px;
     }
     .cart {
+      cursor: pointer;
       svg {
         display: block;
         width: 40px;
