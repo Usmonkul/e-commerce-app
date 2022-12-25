@@ -1,5 +1,4 @@
 export const data = {
-  email: "usmonhakimov1999@gmail.com",
   laptop: [
     {
       name: "Microsoft Surface 3",
