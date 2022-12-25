@@ -1,5 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import { ProductTypes } from "../components/productsList/product-list";
+
 const addCartItem = (cartItems: ProductTypes, productToAdd: ProductTypes) => {
   const existingCartItem = cartItems.find(
     (cartItem) => cartItem.id === productToAdd.id

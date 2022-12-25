@@ -1,3 +1,4 @@
+import React from "react";
 import { Outlet } from "react-router-dom";
 import Navigation from "./routes/navigation/navigation";
 import Footer from "./routes/footer/footer";
